@@ -9,10 +9,15 @@ namespace InOutParamsPOC
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {   
+            //in
+
             int inNumber = 3;
-            viewNumber(in inNumber);
-            Console.WriteLine("\nNumber from out funtion : " + changeNumber(out int outNumber)); //No need to give initial value to variable while using out
+            ViewNumber(in inNumber);
+
+            //out 
+
+            Console.WriteLine("\nNumber from out funtion : " + ChangeNumber(out int outNumber)); //No need to give initial value to variable while using out
                                                                                                  //Also it can be defined directly in function 
 
             //===============================================================================================================
@@ -44,7 +49,7 @@ namespace InOutParamsPOC
 
         }
         //in variable
-        static void viewNumber(in int number) {
+        static void ViewNumber(in int number) {
             // number = 2; Throws error because even though a method parameter is passed by reference,
                              // but the called method viewNumber cannot modify the argument number. 
 
@@ -53,7 +58,7 @@ namespace InOutParamsPOC
 
         //out variable
 
-        static int changeNumber(out int outNumber)
+        static int ChangeNumber(out int outNumber)
         {
             outNumber = 5; //Variable has to be updated when passed as out (ie - updation is compulsory or it will give error)
             return outNumber;
